@@ -1,6 +1,5 @@
 package by.koleso.terminal;
 
-import by.koleso.model.User;
 import by.koleso.services.SomeService;
 
 public class SomeApp {
