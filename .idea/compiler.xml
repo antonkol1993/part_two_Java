@@ -9,9 +9,12 @@
         <module name="model" />
         <module name="services" />
         <module name="terminal" />
-        <module name="module_1" />
+        <module name="constants" />
         <module name="web" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="module_1" target="22" />
+    </bytecodeTargetLevel>
   </component>
 </project>
