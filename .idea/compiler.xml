@@ -6,7 +6,11 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="model" />
+        <module name="services" />
+        <module name="terminal" />
         <module name="module_1" />
+        <module name="web" />
       </profile>
     </annotationProcessing>
   </component>
