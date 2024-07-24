@@ -1,8 +1,8 @@
 package by.koleso.model;
 
+import by.koleso.model.gameBoard.GameBoard;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
-import piatnashki_new.model.gameBoard.GameBoard;
 
 public class GameModel implements Model{
 

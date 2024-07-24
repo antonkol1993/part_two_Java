@@ -1,8 +1,8 @@
-package piatnashki_new;
+package by.koleso.web;
 
+import by.koleso.web.controller.MainMenuController;
 import javafx.application.Application;
 import javafx.stage.Stage;
-import piatnashki_new.controller.MainMenuController;
 
 public class App extends Application {
     @Override

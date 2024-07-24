@@ -1,6 +1,8 @@
 package by.koleso.services;
 
 
+import by.koleso.model.gameBoard.GameBoard;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
