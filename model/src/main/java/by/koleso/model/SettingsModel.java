@@ -6,10 +6,10 @@ import javafx.event.EventHandler;
 
 import java.util.Objects;
 
-public class SettingsModel implements Model {
+public class SettingsModel{
 
     private Settings settings;
-    private piatnashki_new.model.SettingsTab settingsTab;
+    private SettingsTab settingsTab;
     private final EventHandler<ActionEvent> onSmallSizeAction;
     private final EventHandler<ActionEvent> onMediumSizeAction;
     private final EventHandler<ActionEvent> onLargeSizeAction;

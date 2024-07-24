@@ -1,5 +1,7 @@
 package by.koleso.model;
 
+import by.koleso.enums_properties.ButtonSize;
+import by.koleso.enums_properties.GameButtonSize;
 import javafx.scene.paint.Color;
 import javafx.scene.paint.Paint;
 import javafx.scene.text.FontWeight;

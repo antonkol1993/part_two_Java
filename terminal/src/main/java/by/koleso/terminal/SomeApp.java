@@ -1,7 +1,5 @@
 package by.koleso.terminal;
 
-import by.koleso.services.SomeService;
-
 public class SomeApp {
 
     public static void main(String[] args) {
