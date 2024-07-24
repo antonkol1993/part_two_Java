@@ -1,0 +1,10 @@
+by\koleso\web\controller\GameController.class
+by\koleso\web\controller\SettingsController.class
+by\koleso\web\view\GameView.class
+by\koleso\web\view\SettingsView$1.class
+by\koleso\web\controller\AbstractController.class
+by\koleso\web\controller\MainMenuController.class
+by\koleso\web\view\View.class
+by\koleso\web\view\SettingsView.class
+by\koleso\web\App.class
+by\koleso\web\view\MainMenuView.class
