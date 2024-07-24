@@ -1,6 +1,5 @@
 package by.koleso.services;
 
-import piatnashki_new.model.gameBoard.GameBoard;
 
 import java.util.ArrayList;
 import java.util.List;

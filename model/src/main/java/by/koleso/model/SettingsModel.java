@@ -6,7 +6,7 @@ import javafx.event.EventHandler;
 
 import java.util.Objects;
 
-public class SettingsModel{
+public class SettingsModel implements Model{
 
     private Settings settings;
     private SettingsTab settingsTab;

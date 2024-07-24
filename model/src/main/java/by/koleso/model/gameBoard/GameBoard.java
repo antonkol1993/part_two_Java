@@ -1,4 +1,4 @@
-package piatnashki_new.model.gameBoard;
+package by.koleso.model.gameBoard;
 
 import java.util.Arrays;
 import java.util.Objects;
