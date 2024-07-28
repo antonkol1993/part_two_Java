@@ -1,14 +1,26 @@
 package by.koleso.terminal.controller;
 
 import by.koleso.model.MainMenuModel;
-import by.koleso.services.SettingsService;
+import by.koleso.services.GameBoardService;
 import javafx.application.Platform;
-import javafx.stage.Stage;
 
 public class MainMenuController extends AbstractController<MainMenuModel> {
-    private  SettingsService instance = SettingsService.getInstance();
+    GameBoardService gameBoardService = GameBoardService.getInstance();
+
     public MainMenuController() {
         super();
+        model = MainMenuModel.builder().
+                withNumberAction(e -> {
+
+
+                        new GameController();
+                    } else if (e == 2) {
+                        Platform.exit();
+                    }
+                    ;
+
+                }).
+                build();
 //        model = MainMenuModel.builder()
 //                .withOnNewGameAction(event -> new GameController(stage).show())
 //                .withOnExitAction(event -> Platform.exit())

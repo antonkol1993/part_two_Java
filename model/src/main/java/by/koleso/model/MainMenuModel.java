@@ -10,18 +10,22 @@ public class MainMenuModel implements Model {
     private final EventHandler<ActionEvent> onExitAction;
     private final EventHandler<ActionEvent> onSettingsAction;
     private Settings settings;
+    private Integer numberAction;
 
     private MainMenuModel(EventHandler<ActionEvent> onNewGameAction,
                           EventHandler<ActionEvent> onExitAction,
                           EventHandler<ActionEvent> onSettingsAction,
-                          Settings settings) {
+                          Settings settings,
+                          Integer numberAction) {
         Objects.requireNonNull(onNewGameAction, "onNewGameAction can't be null");
         Objects.requireNonNull(onExitAction, "onExitAction can't be null");
+        Objects.requireNonNull(numberAction, "numberAction can't be null");
 
         this.onNewGameAction = onNewGameAction;
         this.onExitAction = onExitAction;
         this.onSettingsAction = onSettingsAction;
         this.settings = settings;
+        this.numberAction = numberAction;
     }
 
     public EventHandler<ActionEvent> getOnNewGameAction() {
@@ -39,6 +43,10 @@ public class MainMenuModel implements Model {
         return settings;
     }
 
+    public Integer getNumberAction() {
+        return numberAction;
+    }
+
     public void setSettings(Settings settings) {
         this.settings = settings;
     }
@@ -51,6 +59,7 @@ public class MainMenuModel implements Model {
         private EventHandler<ActionEvent> onExitAction;
         private EventHandler<ActionEvent> onSettingsAction;
         private Settings settings;
+        private Integer numberAction;
         private Builder() {
         }
 
@@ -72,9 +81,13 @@ public class MainMenuModel implements Model {
             this.settings = settings;
             return this;
         }
+        public Builder withNumberAction(Integer numberAction) {
+            this.numberAction = numberAction;
+            return this;
+        }
 
         public MainMenuModel build() {
-            return new MainMenuModel(onNewGameAction, onExitAction, onSettingsAction, settings);
+            return new MainMenuModel(onNewGameAction, onExitAction, onSettingsAction, settings, numberAction);
         }
     }
 }
