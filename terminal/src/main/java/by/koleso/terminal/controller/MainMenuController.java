@@ -7,8 +7,8 @@ import javafx.stage.Stage;
 
 public class MainMenuController extends AbstractController<MainMenuModel> {
     private  SettingsService instance = SettingsService.getInstance();
-    public MainMenuController(Stage stage) {
-        super(stage);
+    public MainMenuController() {
+        super();
 //        model = MainMenuModel.builder()
 //                .withOnNewGameAction(event -> new GameController(stage).show())
 //                .withOnExitAction(event -> Platform.exit())
