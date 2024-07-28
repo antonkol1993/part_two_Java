@@ -13,24 +13,18 @@
 
     <dependencies>
         <dependency>
-            <groupId>by.koleso</groupId>
-            <artifactId>model</artifactId>
-            <version>1.0-SNAPSHOT</version>
+            <groupId>org.openjfx</groupId>
+            <artifactId>javafx-controls</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.openjfx</groupId>
+            <artifactId>javafx-fxml</artifactId>
         </dependency>
         <dependency>
             <groupId>by.koleso</groupId>
             <artifactId>services</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
-        <dependency>
-            <groupId>org.openjfx</groupId>
-            <artifactId>javafx-base</artifactId>
-            <version>22.0.1</version>
-        </dependency>
-        <dependency>
-            <groupId>org.openjfx</groupId>
-            <artifactId>javafx-graphics</artifactId>
-            <version>22.0.1</version>
-        </dependency>
+
     </dependencies>
 </project>

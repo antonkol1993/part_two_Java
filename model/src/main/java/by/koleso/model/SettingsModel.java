@@ -10,6 +10,7 @@ public class SettingsModel implements Model{
 
     private Settings settings;
     private SettingsTab settingsTab;
+
     private final EventHandler<ActionEvent> onSmallSizeAction;
     private final EventHandler<ActionEvent> onMediumSizeAction;
     private final EventHandler<ActionEvent> onLargeSizeAction;
@@ -36,6 +37,7 @@ public class SettingsModel implements Model{
 
     private SettingsModel(Settings settings,
                           SettingsTab settingsTab,
+
                           EventHandler<ActionEvent> onSmallSizeAction,
                           EventHandler<ActionEvent> onMediumSizeAction,
                           EventHandler<ActionEvent> onLargeSizeAction,
@@ -50,15 +52,17 @@ public class SettingsModel implements Model{
                           EventHandler<ActionEvent> onBlackAction,
                           EventHandler<ActionEvent> onRedAction,
                           EventHandler<ActionEvent> onGreenAction,
+
                           EventHandler<ActionEvent> onThinFontAction,
                           EventHandler<ActionEvent> onMediumFontAction,
                           EventHandler<ActionEvent> onBoldFontAction,
+
                           EventHandler<ActionEvent> onGrayButtonAction,
                           EventHandler<ActionEvent> onPinkButtonAction,
                           EventHandler<ActionEvent> onVioletButtonAction
     ) {
         Objects.requireNonNull(settings, "settings can't be null");
-        Objects.requireNonNull(settingsTab);
+        Objects.requireNonNull(settingsTab, "settingsTab can't be null");
 
         Objects.requireNonNull(onSmallSizeAction, "onSmallSizeAction can't be null");
         Objects.requireNonNull(onMediumSizeAction, "onMediumSizeAction can't be null");
@@ -210,6 +214,7 @@ public class SettingsModel implements Model{
         private Settings settings;
 
         private SettingsTab settingsTab;
+
         EventHandler<ActionEvent> onGrayButtonAction;
         EventHandler<ActionEvent> onPinkButtonAction;
         EventHandler<ActionEvent> onVioletButtonAction;
@@ -340,10 +345,12 @@ public class SettingsModel implements Model{
 
 
         public SettingsModel build() {
-            return new SettingsModel(settings, settingsTab, onSmallSizeAction, onMediumSizeAction, onLargeSizeAction,
-                    onBackAction, onSizeAction, onTextColourAction, onBackgroundColourAction, onFontAction, onBlackTextAction,
-                    onRedTextAction, onGreenTextAction, onThinFontAction, onMediumFontAction, onBoldFontAction, onGrayButtonAction,
-                    onPinkButtonAction, onVioletButtonAction, onSizeInGameAction
+            return new SettingsModel(settings, settingsTab,
+                    onSmallSizeAction, onMediumSizeAction, onLargeSizeAction, onBackAction,
+                    onSizeAction, onTextColourAction, onBackgroundColourAction, onFontAction, onSizeInGameAction,
+                    onBlackTextAction, onRedTextAction, onGreenTextAction,
+                    onThinFontAction, onMediumFontAction, onBoldFontAction,
+                    onGrayButtonAction, onPinkButtonAction, onVioletButtonAction
             );
         }
     }
