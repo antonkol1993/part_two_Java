@@ -11,7 +11,6 @@ public class GameController extends AbstractController<GameModel> {
     private final GameBoard gameBoard;
 
     public GameController(Stage stage) {
-        super(stage);
         this.gameBoard = gameBoardService.newGame(5, 5);
 
         model = GameModel.builder().withOnMoveAction(e -> {

@@ -1,1 +1,6 @@
-by\koleso\terminal\SomeApp.class
+by\koleso\terminal\ConsoleApp.class
+by\koleso\terminal\console\ConsoleView.class
+by\koleso\terminal\controller\MainMenuController.class
+by\koleso\terminal\console\MainMenuConsoleView.class
+by\koleso\terminal\controller\AbstractController.class
+by\koleso\terminal\controller\GameController.class

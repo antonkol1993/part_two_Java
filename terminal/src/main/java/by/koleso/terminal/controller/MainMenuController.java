@@ -9,18 +9,18 @@ public class MainMenuController extends AbstractController<MainMenuModel> {
 
     public MainMenuController() {
         super();
-        model = MainMenuModel.builder().
-                withNumberAction(e -> {
-
-
-                        new GameController();
-                    } else if (e == 2) {
-                        Platform.exit();
-                    }
-                    ;
-
-                }).
-                build();
+//        model = MainMenuModel.builder().
+//                withNumberAction(e -> {
+//
+//
+//                        new GameController();
+//                    } else if (e == 2) {
+//                        Platform.exit();
+//                    }
+//                    ;
+//
+//                }).
+//                build();
 //        model = MainMenuModel.builder()
 //                .withOnNewGameAction(event -> new GameController(stage).show())
 //                .withOnExitAction(event -> Platform.exit())

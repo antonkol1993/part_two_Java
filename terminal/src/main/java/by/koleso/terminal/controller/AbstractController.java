@@ -13,7 +13,6 @@ public abstract class AbstractController<M extends Model> {
     }
 
     public void refresh() {
-        System.out.println(model);
     }
 
 }
