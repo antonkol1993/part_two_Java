@@ -1,1 +1,4 @@
 /model/target/
+/terminal/target/classes/by/koleso/terminal/ConsoleApp.class
+/terminal/target/classes/by/koleso/terminal/console/ConsoleView.class
+/terminal/target/classes/by/koleso/terminal/console/MainMenuConsoleView.class

@@ -1,4 +1,4 @@
-package by.koleso.terminal.console;
+package by.koleso.terminal.console_view;
 
 public interface ConsoleView {
      void getView();

@@ -1,8 +1,6 @@
-package by.koleso.terminal.console;
+package by.koleso.terminal.console_view;
 
 import by.koleso.model.MainMenuModel;
-
-import java.sql.SQLOutput;
 
 public class MainMenuConsoleView implements ConsoleView {
     MainMenuModel model;
