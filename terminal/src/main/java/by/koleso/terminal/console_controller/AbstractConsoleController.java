@@ -1,14 +1,20 @@
 package by.koleso.terminal.console_controller;
 
-public abstract class AbstractConsoleController<M> {
+import by.koleso.terminal.console_model.AbstractModel;
+import by.koleso.terminal.console_view.AbstractConsoleView;
+
+public abstract class AbstractConsoleController<M extends AbstractModel, V extends AbstractConsoleView> {
 
     protected M model;
+    protected V view;
+
 
     public AbstractConsoleController() {
 
     }
 
-    public void refresh() {
+    public void show() {
+        view.getView();
     }
 
 }

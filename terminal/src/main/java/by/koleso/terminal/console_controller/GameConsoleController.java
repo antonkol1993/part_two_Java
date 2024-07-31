@@ -3,12 +3,14 @@ package by.koleso.terminal.console_controller;
 import by.koleso.model.GameModel;
 import by.koleso.model.gameBoard.GameBoard;
 import by.koleso.services.GameBoardService;
+import by.koleso.terminal.console_model.GameConsoleModel;
+import by.koleso.terminal.console_view.GameConsoleView;
 
-public class GameConsoleConsoleController extends AbstractConsoleController<GameModel> {
+public class GameConsoleController extends AbstractConsoleController<GameConsoleModel, GameConsoleView> {
     private final GameBoardService gameBoardService = GameBoardService.getInstance();
     private final GameBoard gameBoard;
 
-    public GameConsoleConsoleController() {
+    public GameConsoleController() {
         this.gameBoard = gameBoardService.newGame(5, 5);
 
 //        model = GameModel.builder().withOnMoveAction(e -> {

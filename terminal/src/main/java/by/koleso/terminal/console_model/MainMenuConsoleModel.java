@@ -4,16 +4,16 @@ import by.koleso.model.Model;
 
 import java.util.Objects;
 
-public class MainMenuConsoleModel {
-    private Integer numberAction;
+public class MainMenuConsoleModel extends AbstractModel{
+    private Functionable<Integer> numberAction;
 
-    private MainMenuConsoleModel(Integer numberAction) {
+    private MainMenuConsoleModel(Functionable<Integer> numberAction) {
         Objects.requireNonNull(numberAction, "numberAction can't be null");
 
         this.numberAction = numberAction;
     }
 
-    public Integer getNumberAction() {
+    public Functionable<Integer> getNumberAction() {
         return numberAction;
     }
     public static Builder builder() {
@@ -21,12 +21,12 @@ public class MainMenuConsoleModel {
     }
     public static class Builder {
 
-        private Integer numberAction;
+        private Functionable<Integer> numberAction;
 
         private Builder() {
         }
 
-        public Builder withNumberAction(Integer numberAction) {
+        public Builder withNumberAction(Functionable<Integer> numberAction) {
             this.numberAction = numberAction;
             return this;
         }

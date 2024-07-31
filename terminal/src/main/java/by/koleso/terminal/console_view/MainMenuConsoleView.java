@@ -1,10 +1,10 @@
 package by.koleso.terminal.console_view;
 
-import by.koleso.model.MainMenuModel;
+import by.koleso.terminal.console_model.MainMenuConsoleModel;
 
-public class MainMenuConsoleView implements ConsoleView {
-    MainMenuModel model;
-    public MainMenuConsoleView(MainMenuModel model) {
+public class MainMenuConsoleView implements AbstractConsoleView {
+    MainMenuConsoleModel model;
+    public MainMenuConsoleView(MainMenuConsoleModel model) {
         this.model = model;
     }
 
