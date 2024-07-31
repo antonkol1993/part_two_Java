@@ -8,6 +8,7 @@ public class WebApp extends Application {
     @Override
     public void start(Stage stage) {
         new MainMenuController(stage).show();
+
     }
 
     @Override

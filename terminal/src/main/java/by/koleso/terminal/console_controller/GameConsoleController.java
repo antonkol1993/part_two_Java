@@ -10,6 +10,11 @@ public class GameConsoleController extends AbstractConsoleController<GameConsole
     private final GameBoardService gameBoardService = GameBoardService.getInstance();
     private final GameBoard gameBoard;
 
+    @Override
+    public void show() {
+        view.getView();
+    }
+
     public GameConsoleController() {
         this.gameBoard = gameBoardService.newGame(5, 5);
 
@@ -23,6 +28,14 @@ public class GameConsoleController extends AbstractConsoleController<GameConsole
 //
 //                .build();
 
+        model = GameConsoleModel.builder()
+                .withMoveAction(e -> {
+                    int number = e;
+                    gameBoardService.move(gameBoard,number);
+                })
+                .build();
+
+        view = new GameConsoleView(model);
     }
 
 }

@@ -11,16 +11,14 @@ public class MainMenuConsoleController extends AbstractConsoleController<MainMen
     public MainMenuConsoleController() {
         super();
         model = MainMenuConsoleModel.builder()
-                .withNumberAction( e -> {
-                    if (e == 1) {
-                        new GameConsoleController();
-                    }
-                    else if (e == 0) {
-                        System.exit(0);
-                    }
+                .withNumberActionOne(e -> {
+                        new GameConsoleController().show();
+                })
+                .withNumberActionTwo(e -> {
+                    System.exit(999999);
                 })
                 .build();
-         view = new MainMenuConsoleView(model);
+        view = new MainMenuConsoleView(model);
 
     }
 

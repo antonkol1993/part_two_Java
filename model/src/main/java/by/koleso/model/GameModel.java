@@ -79,26 +79,5 @@ public class GameModel implements Model{
     }
 
 
-//    public static Builder builder() {
-//        return new Builder();
-//    }
-//    public static class Builder {
-//        private Function<Integer, EventHandler<ActionEvent>> onMoveActionProvider;
-//        Integer value;
-//
-//        private Builder() {
-//        }
-//
-//        public Builder withOnMoveActionProvider(Function<Integer, EventHandler<ActionEvent>> onMoveActionProvider) {
-//            this.onMoveActionProvider = onMoveActionProvider;
-//            return this;
-//        }
-//
-//
-//        public GameModel build() {
-//            return new GameModel(onMoveActionProvider.apply());
-//        }
-//    }
-
 
 }

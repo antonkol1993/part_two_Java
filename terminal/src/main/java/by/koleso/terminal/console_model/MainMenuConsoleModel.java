@@ -1,38 +1,53 @@
 package by.koleso.terminal.console_model;
 
-import by.koleso.model.Model;
-
 import java.util.Objects;
 
-public class MainMenuConsoleModel extends AbstractModel{
-    private Functionable<Integer> numberAction;
+public class MainMenuConsoleModel extends AbstractModel {
+    private final Functionable<Integer> numberActionOne;
+    private final Functionable<Integer> numberActionTwo;
 
-    private MainMenuConsoleModel(Functionable<Integer> numberAction) {
-        Objects.requireNonNull(numberAction, "numberAction can't be null");
+    private MainMenuConsoleModel(Functionable<Integer> numberActionOne,
+                                 Functionable<Integer> numberActionTwo
+    ) {
+        Objects.requireNonNull(numberActionOne, "numberAction can't be null");
+        Objects.requireNonNull(numberActionTwo, "numberActionTwo can't be null");
 
-        this.numberAction = numberAction;
+        this.numberActionOne = numberActionOne;
+        this.numberActionTwo = numberActionTwo;
     }
 
-    public Functionable<Integer> getNumberAction() {
-        return numberAction;
+    public Functionable<Integer> getNumberActionOne() {
+        return numberActionOne;
     }
+
+    public Functionable<Integer> getNumberActionTwo() {
+        return numberActionTwo;
+    }
+
     public static Builder builder() {
         return new Builder();
     }
+
     public static class Builder {
 
-        private Functionable<Integer> numberAction;
+        private Functionable<Integer> numberActionOne;
+        private Functionable<Integer> numberActionTwo;
 
         private Builder() {
         }
 
-        public Builder withNumberAction(Functionable<Integer> numberAction) {
-            this.numberAction = numberAction;
+        public Builder withNumberActionOne(Functionable<Integer> numberActionOne) {
+            this.numberActionOne = numberActionOne;
             return this;
         }
 
-        public MainMenuConsoleModel build () {
-           return new MainMenuConsoleModel(numberAction);
+        public Builder withNumberActionTwo(Functionable<Integer> numberActionTwo) {
+            this.numberActionTwo = numberActionTwo;
+            return this;
+        }
+
+        public MainMenuConsoleModel build() {
+            return new MainMenuConsoleModel(numberActionOne, numberActionTwo);
         }
     }
 }
