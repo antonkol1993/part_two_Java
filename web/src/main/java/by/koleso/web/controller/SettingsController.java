@@ -58,8 +58,8 @@ public class SettingsController extends AbstractController<SettingsModel, Settin
                 }).
 
                 withOnSizeInGameAction(e -> {
-//                    model.setSettingsTab(SettingsTab.FONT);
-//                    view.refresh();
+                    model.setSettingsTab(SettingsTab.SIZE_SQUARES_IN_GAME);
+                    view.refresh();
                 }).
 
 

@@ -48,24 +48,24 @@ public class SettingsView implements View {
     private Button sizeInGameButton;
 
 
+    // background colours button
+    private Button grayBackGroundButton;
+    private Button violetBackGroundButton;
+    private Button pinkBackGroundButton;
+    private Button backInBackgroundColorButton;
+
+    // size in Game buttons
+    private Button smallSquareButton;
+    private Button mediumSquareButton;
+    private Button largeSquareButton;
+    private Button backInGameButtonInSquare;
+
     // view sources
     private Parent sizeView;
     private Parent textColorView;
     private Parent fontView;
     private Parent backgroundColorView;
-
-    // background colours button
-    private Button grayButton;
-    private Button pinkButton;
-    private Button violetButton;
-    private Button backInBackgroundColorButton;
-
-    // size in Game buttons
-    private Button smallGameButton;
-    private Button mediumGameButton;
-    private Button largeGameButton;
-    private Button backInGameButton;
-
+    private Parent sizeSquaresInGameView;
 
     public SettingsView(SettingsModel model) {
         this.model = model;
@@ -141,18 +141,64 @@ public class SettingsView implements View {
 
         sizeView = sizeButtons();
         textColorView = textColoursButtons();
-//        textStyleView = coloursButtons();
         fontView = fontView();
         backgroundColorView = buttonColorView();
+        sizeSquaresInGameView = sizeSquaresInGameView();
 
         Parent view = switch (model.getSettingsTab()) {
             case SIZE -> sizeView;
             case TEXT_COLOUR -> textColorView;
             case BACKGROUND_COLOUR -> backgroundColorView;
             case FONT -> fontView;
+            case SIZE_SQUARES_IN_GAME -> sizeSquaresInGameView;
         };
         box.getChildren().add(view);
         return box;
+    }
+
+    private Parent sizeSquaresInGameView() {
+        VBox vBox = new VBox();
+        vBox.setSpacing(20);
+        vBox.setPadding(new Insets(20, 20, 20, 20));
+        vBox.setAlignment(Pos.CENTER);
+
+        smallSquareButton = ButtonBuilder.get()
+                .withFontSize(model.getSettings().getButtonType().getSize())
+                .withFontWeight(model.getSettings().getFontWeight())
+                .withText("small square")
+//                .withOnAction(model.getOnBackAction())
+                .withTextColour(model.getSettings().getTextColour())
+                .build();
+
+        vBox.getChildren().add(smallSquareButton);
+
+        mediumSquareButton = ButtonBuilder.get()
+                .withFontSize(model.getSettings().getButtonType().getSize())
+                .withFontWeight(model.getSettings().getFontWeight())
+                .withText("Medium square")
+//                .withOnAction(model.getOnVioletButtonAction())
+                .withTextColour(model.getSettings().getTextColour())
+                .build();
+        vBox.getChildren().add(mediumSquareButton);
+
+        largeSquareButton = ButtonBuilder.get()
+                .withFontSize(model.getSettings().getButtonType().getSize())
+                .withFontWeight(model.getSettings().getFontWeight())
+                .withText("Large square")
+//                .withOnAction(model.getOnPinkButtonAction())
+                .withTextColour(model.getSettings().getTextColour())
+                .build();
+        vBox.getChildren().add(largeSquareButton);
+
+        backInGameButtonInSquare = ButtonBuilder.get()
+                .withFontSize(model.getSettings().getButtonType().getSize())
+                .withFontWeight(model.getSettings().getFontWeight())
+                .withText("Back")
+                .withOnAction(model.getOnBackAction())
+                .withTextColour(model.getSettings().getTextColour())
+                .build();
+        vBox.getChildren().add(backInGameButtonInSquare);
+        return vBox;
     }
 
     private Parent buttonColorView() {
@@ -161,7 +207,7 @@ public class SettingsView implements View {
         vBox.setPadding(new Insets(20, 20, 20, 20));
         vBox.setAlignment(Pos.CENTER);
 
-        grayButton = ButtonBuilder.get()
+        grayBackGroundButton = ButtonBuilder.get()
                 .withFontSize(model.getSettings().getButtonType().getSize())
                 .withFontWeight(model.getSettings().getFontWeight())
                 .withText("Gray")
@@ -169,25 +215,25 @@ public class SettingsView implements View {
                 .withTextColour(model.getSettings().getTextColour())
                 .build();
 
-        vBox.getChildren().add(grayButton);
+        vBox.getChildren().add(grayBackGroundButton);
 
-        violetButton = ButtonBuilder.get()
+        pinkBackGroundButton = ButtonBuilder.get()
                 .withFontSize(model.getSettings().getButtonType().getSize())
                 .withFontWeight(model.getSettings().getFontWeight())
                 .withText("Violet")
                 .withOnAction(model.getOnVioletButtonAction())
                 .withTextColour(model.getSettings().getTextColour())
                 .build();
-        vBox.getChildren().add(violetButton);
+        vBox.getChildren().add(pinkBackGroundButton);
 
-        pinkButton = ButtonBuilder.get()
+        violetBackGroundButton = ButtonBuilder.get()
                 .withFontSize(model.getSettings().getButtonType().getSize())
                 .withFontWeight(model.getSettings().getFontWeight())
                 .withText("Pink")
                 .withOnAction(model.getOnPinkButtonAction())
                 .withTextColour(model.getSettings().getTextColour())
                 .build();
-        vBox.getChildren().add(pinkButton);
+        vBox.getChildren().add(violetBackGroundButton);
 
         backInBackgroundColorButton = ButtonBuilder.get()
                 .withFontSize(model.getSettings().getButtonType().getSize())
@@ -422,15 +468,15 @@ public class SettingsView implements View {
 
 
         // button's background color  menu area
-        grayButton.setFont(Font.font(null, fontWeight, newSize));
-        grayButton.setTextFill(textColour);
-        grayButton.setBackground(Background.fill(buttonColour));
-        pinkButton.setFont(Font.font(null, fontWeight, newSize));
-        pinkButton.setTextFill(textColour);
-        pinkButton.setBackground(Background.fill(buttonColour));
-        violetButton.setFont(Font.font(null, fontWeight, newSize));
-        violetButton.setTextFill(textColour);
-        violetButton.setBackground(Background.fill(buttonColour));
+        grayBackGroundButton.setFont(Font.font(null, fontWeight, newSize));
+        grayBackGroundButton.setTextFill(textColour);
+        grayBackGroundButton.setBackground(Background.fill(buttonColour));
+        violetBackGroundButton.setFont(Font.font(null, fontWeight, newSize));
+        violetBackGroundButton.setTextFill(textColour);
+        violetBackGroundButton.setBackground(Background.fill(buttonColour));
+        pinkBackGroundButton.setFont(Font.font(null, fontWeight, newSize));
+        pinkBackGroundButton.setTextFill(textColour);
+        pinkBackGroundButton.setBackground(Background.fill(buttonColour));
         backInBackgroundColorButton.setFont(Font.font(null, fontWeight, newSize));
         backInBackgroundColorButton.setTextFill(textColour);
         backInBackgroundColorButton.setBackground(Background.fill(buttonColour));
@@ -440,6 +486,7 @@ public class SettingsView implements View {
             case TEXT_COLOUR -> textColorView;
             case BACKGROUND_COLOUR -> backgroundColorView;
             case FONT -> fontView;
+            case SIZE_SQUARES_IN_GAME -> sizeSquaresInGameView;
         };
         box.getChildren().remove(2);
         box.getChildren().add(view);
