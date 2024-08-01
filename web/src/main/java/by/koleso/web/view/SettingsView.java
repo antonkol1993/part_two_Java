@@ -422,6 +422,9 @@ public class SettingsView implements View {
         backgroundColorButton.setFont(Font.font(null, fontWeight, newSize));
         backgroundColorButton.setTextFill(Color.GREEN);
 //        backgroundColorButton.setBackground(Background.fill(buttonColour));
+        sizeInGameButton.setFont(Font.font(null, fontWeight, newSize));
+//        sizeInGameButton.setTextFill(Color.GREEN);
+//        backgroundColorButton.setBackground(Background.fill(buttonColour));
 
         // size menu area
         smallSizeButton.setFont(Font.font(null, fontWeight, newSize));
@@ -465,8 +468,6 @@ public class SettingsView implements View {
         backInFontButton.setTextFill(textColour);
         backInFontButton.setBackground(Background.fill(buttonColour));
 
-
-
         // button's background color  menu area
         grayBackGroundButton.setFont(Font.font(null, fontWeight, newSize));
         grayBackGroundButton.setTextFill(textColour);
@@ -480,6 +481,8 @@ public class SettingsView implements View {
         backInBackgroundColorButton.setFont(Font.font(null, fontWeight, newSize));
         backInBackgroundColorButton.setTextFill(textColour);
         backInBackgroundColorButton.setBackground(Background.fill(buttonColour));
+
+
 
         Parent view = switch (settingsTab) {
             case SIZE -> sizeView;
