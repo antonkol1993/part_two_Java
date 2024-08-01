@@ -34,6 +34,10 @@ public class SettingsModel implements Model {
     private final EventHandler<ActionEvent> onPinkButtonAction;
     private final EventHandler<ActionEvent> onVioletButtonAction;
 
+    private final EventHandler<ActionEvent> onSmallSquareAction;
+    private final EventHandler<ActionEvent> onMediumSquareAction;
+    private final EventHandler<ActionEvent> onLargeSquareAction;
+
     private SettingsModel(Settings settings,
                           SettingsTab settingsTab,
 
@@ -58,7 +62,11 @@ public class SettingsModel implements Model {
 
                           EventHandler<ActionEvent> onGrayButtonAction,
                           EventHandler<ActionEvent> onPinkButtonAction,
-                          EventHandler<ActionEvent> onVioletButtonAction
+                          EventHandler<ActionEvent> onVioletButtonAction,
+
+                          EventHandler<ActionEvent> onSmallSquareAction,
+                          EventHandler<ActionEvent> onMediumSquareAction,
+                          EventHandler<ActionEvent> onLargeSquareAction
     ) {
         Objects.requireNonNull(settings, "settings can't be null");
         Objects.requireNonNull(settingsTab, "settingsTab can't be null");
@@ -85,6 +93,10 @@ public class SettingsModel implements Model {
         Objects.requireNonNull(onGrayButtonAction, "onGrayButtonAction can't be null");
         Objects.requireNonNull(onPinkButtonAction, "onPinkButtonAction can't be null");
         Objects.requireNonNull(onVioletButtonAction, "onVioletButtonAction can't be null");
+
+        Objects.requireNonNull(onSmallSquareAction, "onSmallSquareAction can't be null");
+        Objects.requireNonNull(onMediumSquareAction, "onMediumSquareAction can't be null");
+        Objects.requireNonNull(onLargeSquareAction, "onLargeSquareAction can't be null");
 
 
         this.settings = settings;
@@ -114,6 +126,9 @@ public class SettingsModel implements Model {
         this.onPinkButtonAction = onPinkButtonAction;
         this.onVioletButtonAction = onVioletButtonAction;
 
+        this.onSmallSquareAction = onSmallSquareAction;
+        this.onMediumSquareAction = onMediumSquareAction;
+        this.onLargeSquareAction = onLargeSquareAction;
 
     }
 
@@ -205,6 +220,18 @@ public class SettingsModel implements Model {
         return onSizeInGameAction;
     }
 
+    public EventHandler<ActionEvent> getOnSmallSquareAction() {
+        return onSmallSquareAction;
+    }
+
+    public EventHandler<ActionEvent> getOnMediumSquareAction() {
+        return onMediumSquareAction;
+    }
+
+    public EventHandler<ActionEvent> getOnLargeSquareAction() {
+        return onLargeSquareAction;
+    }
+
     public static Builder builder() {
         return new SettingsModel.Builder();
     }
@@ -238,8 +265,28 @@ public class SettingsModel implements Model {
         private EventHandler<ActionEvent> onMediumFontAction;
         private EventHandler<ActionEvent> onBoldFontAction;
 
+        private EventHandler<ActionEvent> onSmallSquareAction;
+        private EventHandler<ActionEvent> onMediumSquareAction;
+        private EventHandler<ActionEvent> onLargeSquareAction;
+
+
         private Builder() {
         }
+
+        public Builder withOnSmallSquareAction(EventHandler<ActionEvent> onSmallSquareAction) {
+            this.onSmallSquareAction = onSmallSquareAction;
+            return this;
+        }
+        public Builder withOnMediumSquareAction(EventHandler<ActionEvent> onMediumSquareAction) {
+            this.onMediumSquareAction = onMediumSquareAction;
+            return this;
+        }
+        public Builder withOnLargeSquareAction(EventHandler<ActionEvent> onLargeSquareAction) {
+            this.onLargeSquareAction = onLargeSquareAction;
+            return this;
+        }
+
+
 
         public Builder withSettings(Settings settings) {
             this.settings = settings;
@@ -349,7 +396,8 @@ public class SettingsModel implements Model {
                     onSizeAction, onTextColourAction, onBackgroundColourAction, onFontAction, onSizeInGameAction,
                     onBlackTextAction, onRedTextAction, onGreenTextAction,
                     onThinFontAction, onMediumFontAction, onBoldFontAction,
-                    onGrayButtonAction, onPinkButtonAction, onVioletButtonAction
+                    onGrayButtonAction, onPinkButtonAction, onVioletButtonAction,
+                    onSmallSquareAction,onMediumSquareAction,onLargeSquareAction
             );
         }
     }
