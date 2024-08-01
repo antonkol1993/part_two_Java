@@ -1,14 +1,13 @@
 package by.koleso.web.controller;
 
-import by.koleso.enums_properties.ButtonBackgroundColour;
-import by.koleso.enums_properties.ButtonFont;
-import by.koleso.enums_properties.ButtonSize;
-import by.koleso.enums_properties.ButtonTextColour;
+import by.koleso.enums_properties.*;
 import by.koleso.model.SettingsModel;
 import by.koleso.model.SettingsTab;
 import by.koleso.services.SettingsService;
 import by.koleso.web.view.SettingsView;
 import javafx.stage.Stage;
+
+import static by.koleso.enums_properties.GameButtonSize.*;
 
 public class SettingsController extends AbstractController<SettingsModel, SettingsView> {
 
@@ -50,16 +49,28 @@ public class SettingsController extends AbstractController<SettingsModel, Settin
                 withOnBackgroundColourAction(e -> {
                     model.setSettingsTab(SettingsTab.BACKGROUND_COLOUR);
                     view.refresh();
-
                 }).
                 withOnFontAction(e -> {
                     model.setSettingsTab(SettingsTab.FONT);
                     view.refresh();
                 }).
-
                 withOnSizeInGameAction(e -> {
                     model.setSettingsTab(SettingsTab.SIZE_SQUARES_IN_GAME);
                     view.refresh();
+                }).
+
+                withOnSmallSquareAction(e -> {
+                    settingsService.updateSizeInGameBoard(SMALL_SIZE_GAMEBUTTON);
+                    model.setSettings(settingsService.getSettings());
+
+                }).
+                withOnMediumSquareAction(e -> {
+                    settingsService.updateSizeInGameBoard(MEDIUM_SIZE_GAMEBUTTON);
+                    model.setSettings(settingsService.getSettings());
+                }).
+                withOnLargeSquareAction(e -> {
+                    settingsService.updateSizeInGameBoard(LARGE_SIZE_GAMEBUTTON);
+                    model.setSettings(settingsService.getSettings());
                 }).
 
 

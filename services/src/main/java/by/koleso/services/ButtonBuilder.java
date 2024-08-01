@@ -85,7 +85,7 @@ public class ButtonBuilder {
         button.setPrefWidth(Constants.BUTTON_PREF_WIDTH);
         button.setOnAction(onAction);
         button.setTextFill(textColour);
-        button.setBackground(Background.fill(buttonColour));
+        button.setBackground(Background.fill(Color.LIGHTGREEN));
         button.setStyle(styleButton);
         button.setPrefSize(buttonSize,buttonSize);
         return button;

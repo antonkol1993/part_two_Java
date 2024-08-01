@@ -1,12 +1,10 @@
 package by.koleso.enums_properties;
 
-import javafx.scene.text.FontWeight;
-
 public enum GameButtonSize {
 
     SMALL_SIZE_GAMEBUTTON(40),
     MEDIUM_SIZE_GAMEBUTTON(60),
-    BOLD_SIZE_GAMEBUTTON(90);
+    LARGE_SIZE_GAMEBUTTON(90);
 
     private final double font;
 
