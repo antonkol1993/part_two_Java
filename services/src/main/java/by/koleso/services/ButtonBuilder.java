@@ -46,7 +46,7 @@ public class ButtonBuilder {
         this.fontWeight = fontWeight;
         return this;
     }
-    // todo don't use while
+
     public ButtonBuilder withTextColour(Paint textColour) {
         this.textColour = textColour;
         return this;

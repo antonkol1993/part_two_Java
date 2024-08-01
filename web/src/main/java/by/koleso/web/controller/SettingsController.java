@@ -56,6 +56,13 @@ public class SettingsController extends AbstractController<SettingsModel, Settin
                     model.setSettingsTab(SettingsTab.FONT);
                     view.refresh();
                 }).
+
+                withOnSizeInGameAction(e -> {
+//                    model.setSettingsTab(SettingsTab.FONT);
+//                    view.refresh();
+                }).
+
+
                 withOnBlackAction(e -> {
                     //TODO: update global settings
                     settingsService.updateTextColour(ButtonTextColour.BLACK.getTextColour());
@@ -108,10 +115,6 @@ public class SettingsController extends AbstractController<SettingsModel, Settin
                     settingsService.updateBackgroundColour(ButtonBackgroundColour.VIOLET.getBackgroundColour());
                     model.setSettings(settingsService.getSettings());
                     view.refresh();
-                }).
-                withOnSizeInGameAction(e -> {
-                    settingsService.updateBackgroundColour(ButtonBackgroundColour.VIOLET.getBackgroundColour());
-                    model.setSettings(settingsService.getSettings());
                 })
                 .build();
 
