@@ -9,7 +9,7 @@ public class MainMenuModel implements Model {
     private final EventHandler<ActionEvent> onNewGameAction;
     private final EventHandler<ActionEvent> onExitAction;
     private final EventHandler<ActionEvent> onSettingsAction;
-    private Settings settings;
+    private final Settings settings;
 
     private MainMenuModel(EventHandler<ActionEvent> onNewGameAction,
                           EventHandler<ActionEvent> onExitAction,
@@ -41,11 +41,6 @@ public class MainMenuModel implements Model {
 
     public Settings getSettings() {
         return settings;
-    }
-
-
-    public void setSettings(Settings settings) {
-        this.settings = settings;
     }
 
     public static Builder builder() {

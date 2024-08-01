@@ -1,4 +1,4 @@
-package by.koleso.terminal.console_view;
+package by.koleso.terminal.console.view;
 
 import by.koleso.model.gameBoard.GameBoard;
 import by.koleso.services.GameBoardService;

@@ -1,12 +1,11 @@
 package by.koleso.model;
 
-import by.koleso.model.Settings;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 
 import java.util.Objects;
 
-public class SettingsModel implements Model{
+public class SettingsModel implements Model {
 
     private Settings settings;
     private SettingsTab settingsTab;

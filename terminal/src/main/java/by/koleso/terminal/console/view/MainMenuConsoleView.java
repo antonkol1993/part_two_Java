@@ -1,4 +1,4 @@
-package by.koleso.terminal.console_view;
+package by.koleso.terminal.console.view;
 
 import java.util.Scanner;
 

@@ -4,12 +4,12 @@ import by.koleso.model.gameBoard.GameBoard;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 
-public class GameModel implements Model{
+public class GameModel implements Model {
 
-    private EventHandler<ActionEvent> onMoveAction;
+    private final EventHandler<ActionEvent> onMoveAction;
     private final GameBoard gameBoard;
-    private Settings settings;
-    private EventHandler<ActionEvent> onBackAction;
+    private final Settings settings;
+    private final EventHandler<ActionEvent> onBackAction;
 
     public GameModel(EventHandler<ActionEvent> onMoveAction, GameBoard gameBoard, Settings settings, EventHandler<ActionEvent> onBackAction) {
 
@@ -50,7 +50,7 @@ public class GameModel implements Model{
         private Builder() {
         }
 
-        public Builder withGameboard (GameBoard gameBoard) {
+        public Builder withGameboard(GameBoard gameBoard) {
             this.gameBoard = gameBoard;
             return this;
         }
@@ -64,20 +64,18 @@ public class GameModel implements Model{
             this.settings = settings;
             return this;
         }
+
         public Builder withOnBackAction(EventHandler<ActionEvent> onBackAction) {
             this.onBackAction = onBackAction;
             return this;
         }
 
 
-
-
-        public GameModel build () {
-            return new GameModel(onMoveAction, gameBoard, settings,onBackAction );
+        public GameModel build() {
+            return new GameModel(onMoveAction, gameBoard, settings, onBackAction);
         }
 
     }
-
 
 
 }
